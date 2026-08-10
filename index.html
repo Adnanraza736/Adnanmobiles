@@ -1,12 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adnan Mobiles</title>
+    <title>Adnan Mobiles - Computer Repairing Center</title>
+
+    <!-- WhatsApp Preview Meta Tags -->
+    <meta property="og:title" content="ADNAN MOBILES & Computer Repairing Center">
+    <meta property="og:description" content="Professional mobile & computer solutions, software services, graphic designing and digital work — Near UBL, Basharat.">
+    <meta property="og:type" content="website">
+
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         * {
             box-sizing: border-box;
@@ -24,6 +30,41 @@
             justify-content: flex-start;
             min-height: 100vh;
             padding: 20px 15px;
+            overflow-x: hidden;
+        }
+
+        /* --- Keyframe Animations --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatGlow {
+            0% {
+                transform: translateY(0px);
+                box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+                border-color: rgba(255, 204, 0, 0.4);
+            }
+            50% {
+                transform: translateY(-12px);
+                box-shadow: 0 0 50px rgba(255, 204, 0, 0.5);
+                border-color: rgba(255, 204, 0, 1);
+            }
+            100% {
+                transform: translateY(0px);
+                box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+                border-color: rgba(255, 204, 0, 0.4);
+            }
+        }
+
+        @keyframes borderPulse {
+            0%, 100% { border-color: #7a6212; box-shadow: 0 0 5px rgba(255, 204, 0, 0.2); }
+            50% { border-color: #ffcc00; box-shadow: 0 0 15px rgba(255, 204, 0, 0.5); }
         }
 
         /* Top Header */
@@ -31,12 +72,14 @@
             text-align: center;
             margin-top: 10px;
             margin-bottom: 25px;
+            animation: fadeInDown 0.8s ease-out forwards;
         }
         .top-header h2 {
             color: #ffcc00;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
             letter-spacing: 1.5px;
+            text-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
         }
         .top-header p {
             color: #aaaaaa;
@@ -57,18 +100,20 @@
             margin-bottom: 25px;
             background-color: rgba(255, 204, 0, 0.02);
             font-weight: 600;
+            animation: fadeInDown 1s ease-out forwards, borderPulse 3s infinite ease-in-out;
         }
 
         /* Main Hero Circle Card */
         .hero-circle {
-            border: 1px solid #222222;
+            border: 2px solid #ffcc00;
             border-radius: 50%;
             padding: 45px 25px;
             text-align: center;
             max-width: 380px;
-            box-shadow: 0 0 60px rgba(255, 204, 0, 0.03);
             margin-bottom: 30px;
-            background: radial-gradient(circle, rgba(255, 204, 0, 0.05) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.1) 0%, rgba(0,0,0,0) 70%);
+            animation: floatGlow 3.5s ease-in-out infinite, fadeInUp 1.2s ease-out forwards;
+            transition: all 0.3s ease;
         }
 
         .hero-circle h1 {
@@ -83,6 +128,7 @@
         .hero-circle h1 .yellow {
             color: #ffcc00;
             display: block;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
         }
 
         .hero-circle h3 {
@@ -105,12 +151,14 @@
             font-weight: 500;
         }
 
-        /* Action Buttons */
+        /* Action Buttons Container */
         .btn-container {
             display: flex;
+            flex-direction: column;
             gap: 12px;
             width: 100%;
             max-width: 360px;
+            animation: fadeInUp 1.4s ease-out forwards;
         }
 
         .btn {
@@ -124,18 +172,25 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:active, .btn:hover {
+            transform: scale(1.04);
         }
 
         .btn-call {
             background-color: #ffcc00;
             color: #000000;
             border: none;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
         }
 
         .btn-whatsapp {
-            background-color: transparent;
-            color: #ffcc00;
-            border: 1px solid #ffcc00;
+            background-color: #25D366;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
     </style>
 </head>
@@ -162,15 +217,19 @@
         </div>
     </div>
 
-    <!-- Buttons -->
+    <!-- Buttons Section -->
     <div class="btn-container">
-        <a href="tel:+923000000000" class="btn btn-call">
-            <i class="fas fa-phone"></i> Call Now
+        <!-- Call Button -->
+        <a href="tel:+923474259475" class="btn btn-call">
+            <i class="fas fa-phone"></i> Call: 0347-4259475
         </a>
-        <a href="https://wa.me/923000000000" class="btn btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/923431556149" class="btn btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp: 0343-1556149
         </a>
     </div>
 
 </body>
-</html>
+    </html>
+
