@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adnan Mobiles - Computer Repairing Center</title>
 
-    <!-- WhatsApp Preview Meta Tags -->
     <meta property="og:title" content="ADNAN MOBILES & Computer Repairing Center">
     <meta property="og:description" content="Professional mobile & computer solutions, software services, graphic designing and digital work — Near UBL, Basharat.">
     <meta property="og:type" content="website">
 
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -29,49 +27,49 @@
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            padding: 20px 15px;
+            padding: 25px 15px;
             overflow-x: hidden;
         }
 
         /* --- Keyframe Animations --- */
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
+            from { opacity: 0; transform: translateY(-25px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(35px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes floatGlow {
+        @keyframes floatGlowCard {
             0% {
                 transform: translateY(0px);
-                box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
-                border-color: rgba(255, 204, 0, 0.4);
+                box-shadow: 0 0 25px rgba(255, 204, 0, 0.25);
+                border-color: rgba(255, 204, 0, 0.5);
             }
             50% {
-                transform: translateY(-12px);
-                box-shadow: 0 0 50px rgba(255, 204, 0, 0.5);
+                transform: translateY(-10px);
+                box-shadow: 0 0 55px rgba(255, 204, 0, 0.6);
                 border-color: rgba(255, 204, 0, 1);
             }
             100% {
                 transform: translateY(0px);
-                box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
-                border-color: rgba(255, 204, 0, 0.4);
+                box-shadow: 0 0 25px rgba(255, 204, 0, 0.25);
+                border-color: rgba(255, 204, 0, 0.5);
             }
         }
 
-        @keyframes borderPulse {
-            0%, 100% { border-color: #7a6212; box-shadow: 0 0 5px rgba(255, 204, 0, 0.2); }
-            50% { border-color: #ffcc00; box-shadow: 0 0 15px rgba(255, 204, 0, 0.5); }
+        @keyframes pulseBorder {
+            0%, 100% { border-color: #7a6212; box-shadow: 0 0 8px rgba(255, 204, 0, 0.2); }
+            50% { border-color: #ffcc00; box-shadow: 0 0 20px rgba(255, 204, 0, 0.6); }
         }
 
         /* Top Header */
         .top-header {
             text-align: center;
-            margin-top: 10px;
-            margin-bottom: 25px;
+            margin-top: 5px;
+            margin-bottom: 20px;
             animation: fadeInDown 0.8s ease-out forwards;
         }
         .top-header h2 {
@@ -79,76 +77,80 @@
             font-size: 22px;
             font-weight: 800;
             letter-spacing: 1.5px;
-            text-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
         }
         .top-header p {
             color: #aaaaaa;
             font-size: 11px;
             letter-spacing: 1px;
-            margin-top: 2px;
+            margin-top: 3px;
         }
 
         /* Services Pill Border */
         .services-pill {
             border: 1px solid #7a6212;
             border-radius: 25px;
-            padding: 10px 20px;
+            padding: 10px 22px;
             font-size: 11px;
             color: #e6c229;
             letter-spacing: 1.5px;
             text-align: center;
             margin-bottom: 25px;
-            background-color: rgba(255, 204, 0, 0.02);
+            background-color: rgba(255, 204, 0, 0.03);
             font-weight: 600;
-            animation: fadeInDown 1s ease-out forwards, borderPulse 3s infinite ease-in-out;
+            animation: fadeInDown 1s ease-out forwards, pulseBorder 3s infinite ease-in-out;
         }
 
-        /* Main Hero Circle Card */
-        .hero-circle {
+        /* Main Hero Card (Lamba Card Design) */
+        .hero-card {
             border: 2px solid #ffcc00;
-            border-radius: 50%;
-            padding: 45px 25px;
+            border-radius: 35px; /* Circle ki jagah lamba sleek shape */
+            padding: 40px 22px;
             text-align: center;
-            max-width: 380px;
-            margin-bottom: 30px;
-            background: radial-gradient(circle, rgba(255, 204, 0, 0.1) 0%, rgba(0,0,0,0) 70%);
-            animation: floatGlow 3.5s ease-in-out infinite, fadeInUp 1.2s ease-out forwards;
-            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 360px;
+            margin-bottom: 25px;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.08) 0%, rgba(0,0,0,0.8) 100%);
+            animation: floatGlowCard 3.5s ease-in-out infinite, fadeInUp 1.2s ease-out forwards;
         }
 
-        .hero-circle h1 {
-            font-size: 32px;
+        .hero-card h1 {
+            font-size: 30px;
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1.2;
             letter-spacing: 1px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             color: #ffffff;
         }
 
-        .hero-circle h1 .yellow {
+        .hero-card h1 .yellow {
             color: #ffcc00;
             display: block;
-            text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+            text-shadow: 0 0 18px rgba(255, 204, 0, 0.6);
         }
 
-        .hero-circle h3 {
-            font-size: 20px;
+        .hero-card h3 {
+            font-size: 18px;
             font-weight: 500;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
-        .hero-circle p {
-            color: #b0b0b0;
+        .hero-card p {
+            color: #cccccc;
             font-size: 13px;
-            line-height: 1.5;
-            margin-bottom: 20px;
+            line-height: 1.6;
+            margin-bottom: 22px;
         }
 
         .location {
             font-size: 15px;
             color: #ffffff;
-            font-weight: 500;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
         }
 
         /* Action Buttons Container */
@@ -163,52 +165,49 @@
 
         .btn {
             flex: 1;
-            padding: 14px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 14px;
             font-weight: bold;
             font-size: 15px;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            gap: 10px;
+            transition: all 0.25s ease;
         }
 
         .btn:active, .btn:hover {
-            transform: scale(1.04);
+            transform: translateY(-2px) scale(1.02);
         }
 
         .btn-call {
             background-color: #ffcc00;
             color: #000000;
             border: none;
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 204, 0, 0.4);
         }
 
         .btn-whatsapp {
             background-color: #25D366;
             color: #ffffff;
             border: none;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
     <div class="top-header">
         <h2>ADNAN MOBILES</h2>
         <p>COMPUTER REPAIRING CENTER</p>
     </div>
 
-    <!-- Tagline Pill -->
     <div class="services-pill">
         MOBILE • COMPUTER • DIGITAL SERVICES
     </div>
 
-    <!-- Center Circle Content -->
-    <div class="hero-circle">
+    <div class="hero-card">
         <h1>ADNAN <span class="yellow">MOBILES</span></h1>
         <h3>and Computer Repairing Center</h3>
         <p>Professional mobile & computer solutions, software services, graphic designing and digital work — all under one roof.</p>
@@ -217,14 +216,11 @@
         </div>
     </div>
 
-    <!-- Buttons Section -->
     <div class="btn-container">
-        <!-- Call Button -->
         <a href="tel:+923474259475" class="btn btn-call">
             <i class="fas fa-phone"></i> Call: 0347-4259475
         </a>
 
-        <!-- WhatsApp Button -->
         <a href="https://wa.me/923431556149" class="btn btn-whatsapp" target="_blank">
             <i class="fab fa-whatsapp"></i> WhatsApp: 0343-1556149
         </a>
@@ -232,4 +228,4 @@
 
 </body>
     </html>
-
+    
