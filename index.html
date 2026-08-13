@@ -536,6 +536,67 @@ footer{
 }
 
 </style>
+    /* ROTATING GOLD CIRCLE + DOT */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:380px;
+    height:380px;
+    right:4%;
+    top:50%;
+    transform:translateY(-50%);
+    border:1px solid rgba(255,210,28,.35);
+    border-radius:50%;
+    box-shadow:0 0 35px rgba(255,210,28,.08);
+    animation:circleRotate 14s linear infinite;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:#ffd21c;
+    border-radius:50%;
+    right:calc(4% + 184px);
+    top:calc(50% - 190px);
+    box-shadow:0 0 12px #ffd21c,0 0 30px rgba(255,210,28,.8);
+    animation:dotOrbit 5s linear infinite;
+}
+
+@keyframes circleRotate{
+    from{transform:translateY(-50%) rotate(0deg);}
+    to{transform:translateY(-50%) rotate(360deg);}
+}
+
+@keyframes dotOrbit{
+    from{
+        transform:rotate(0deg) translateX(190px) rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg) translateX(190px) rotate(-360deg);
+    }
+}
+
+@media(max-width:700px){
+    .hero::before{
+        width:280px;
+        height:280px;
+        right:-100px;
+        top:70%;
+    }
+
+    .hero::after{
+        right:35px;
+        top:calc(70% - 145px);
+    }
+}
 </head>
 
 <body>
