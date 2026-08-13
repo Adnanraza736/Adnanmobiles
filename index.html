@@ -123,12 +123,51 @@ nav{
     display:flex;
     align-items:center;
     padding:70px 0;
+    position:relative;
+    overflow:hidden;
+}
+
+/* ROTATING GOLD CIRCLE */
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:380px;
+    height:380px;
+    right:4%;
+    top:50%;
+    transform:translateY(-50%);
+    border:1px solid rgba(255,210,28,.35);
+    border-radius:50%;
+    box-shadow:0 0 35px rgba(255,210,28,.08);
+    animation:circleRotate 14s linear infinite;
+    pointer-events:none;
+}
+
+/* ROTATING GOLD DOT */
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:#ffd21c;
+    border-radius:50%;
+    right:calc(4% + 184px);
+    top:calc(50% - 190px);
+    box-shadow:
+        0 0 12px #ffd21c,
+        0 0 30px rgba(255,210,28,.8);
+    animation:dotOrbit 5s linear infinite;
+    pointer-events:none;
 }
 
 .container{
     width:92%;
     max-width:1100px;
     margin:auto;
+    position:relative;
+    z-index:2;
 }
 
 .badge{
@@ -243,10 +282,8 @@ section{
     border-radius:18px;
     padding:28px 22px;
     overflow:hidden;
-
     opacity:0;
     transform:translateY(35px);
-
     transition:
         opacity .8s ease,
         transform .8s ease,
@@ -308,7 +345,6 @@ section{
     border-radius:25px;
     padding:45px;
     text-align:center;
-
     opacity:0;
     transform:translateY(30px);
     transition:.9s;
@@ -403,7 +439,6 @@ footer{
         opacity:0;
         transform:translateY(30px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
@@ -415,7 +450,6 @@ footer{
         opacity:0;
         transform:translateY(-20px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
@@ -423,63 +457,70 @@ footer{
 }
 
 @keyframes logoShine{
-
     0%,60%{
         left:-80px;
     }
-
     80%,100%{
         left:150%;
     }
-
 }
 
 @keyframes buttonShine{
-
     0%,65%{
         left:-120%;
     }
-
     85%,100%{
         left:150%;
     }
-
 }
 
 @keyframes buttonPulse{
-
     0%,100%{
         box-shadow:0 0 0 0 rgba(255,210,28,0);
     }
-
     50%{
         box-shadow:0 0 0 10px rgba(255,210,28,.06);
     }
-
 }
 
 @keyframes glowMove{
-
     from{
         transform:translate(0,0);
     }
-
     to{
         transform:translate(220px,100px);
     }
-
 }
 
 @keyframes glowMove2{
-
     from{
         transform:translate(0,0);
     }
-
     to{
         transform:translate(-180px,-100px);
     }
+}
 
+/* CIRCLE ROTATION */
+
+@keyframes circleRotate{
+    from{
+        transform:translateY(-50%) rotate(0deg);
+    }
+    to{
+        transform:translateY(-50%) rotate(360deg);
+    }
+}
+
+/* DOT ORBIT */
+
+@keyframes dotOrbit{
+    from{
+        transform:rotate(0deg) translateX(190px) rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg) translateX(190px) rotate(-360deg);
+    }
 }
 
 /* MOBILE */
@@ -498,6 +539,22 @@ footer{
 
     .services{
         grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .hero::before{
+        width:280px;
+        height:280px;
+        right:-100px;
+        top:70%;
+    }
+
+    .hero::after{
+        right:35px;
+        top:calc(70% - 145px);
     }
 
 }
@@ -536,70 +593,12 @@ footer{
 }
 
 </style>
-    /* ROTATING GOLD CIRCLE + DOT */
 
-.hero{
-    position:relative;
-    overflow:hidden;
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-    width:380px;
-    height:380px;
-    right:4%;
-    top:50%;
-    transform:translateY(-50%);
-    border:1px solid rgba(255,210,28,.35);
-    border-radius:50%;
-    box-shadow:0 0 35px rgba(255,210,28,.08);
-    animation:circleRotate 14s linear infinite;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    width:12px;
-    height:12px;
-    background:#ffd21c;
-    border-radius:50%;
-    right:calc(4% + 184px);
-    top:calc(50% - 190px);
-    box-shadow:0 0 12px #ffd21c,0 0 30px rgba(255,210,28,.8);
-    animation:dotOrbit 5s linear infinite;
-}
-
-@keyframes circleRotate{
-    from{transform:translateY(-50%) rotate(0deg);}
-    to{transform:translateY(-50%) rotate(360deg);}
-}
-
-@keyframes dotOrbit{
-    from{
-        transform:rotate(0deg) translateX(190px) rotate(0deg);
-    }
-    to{
-        transform:rotate(360deg) translateX(190px) rotate(-360deg);
-    }
-}
-
-@media(max-width:700px){
-    .hero::before{
-        width:280px;
-        height:280px;
-        right:-100px;
-        top:70%;
-    }
-
-    .hero::after{
-        right:35px;
-        top:calc(70% - 145px);
-    }
-}
 </head>
 
 <body>
+
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -620,6 +619,8 @@ ADNAN MOBILES
 
 </nav>
 
+
+<!-- HERO -->
 
 <header class="hero" id="home">
 
@@ -660,6 +661,8 @@ target="_blank">
 </header>
 
 
+<!-- SERVICES -->
+
 <section id="services">
 
 <div class="container">
@@ -675,7 +678,6 @@ Quality work with professional care.
 </p>
 
 </div>
-
 
 <div class="services">
 
@@ -768,6 +770,8 @@ New and second-hand mobile phones.
 </section>
 
 
+<!-- ABOUT -->
+
 <section id="about">
 
 <div class="container">
@@ -805,6 +809,8 @@ helpful service and quality work.
 </section>
 
 
+<!-- CONTACT -->
+
 <section id="contact">
 
 <div class="container">
@@ -826,7 +832,6 @@ Let's <span class="gold">Connect</span>
 <p>
 ✉ adnanraza736@gmail.com
 </p>
-
 
 <div class="buttons"
 style="justify-content:center">
@@ -857,6 +862,8 @@ target="_blank">
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
 © 2026 Adnan Mobiles and Computer Repairing Center
@@ -865,12 +872,16 @@ target="_blank">
 </footer>
 
 
+<!-- FLOATING WHATSAPP -->
+
 <a class="whatsapp"
 href="https://wa.me/923474259475"
 target="_blank">
 💬
 </a>
 
+
+<!-- SCROLL ANIMATION -->
 
 <script>
 
@@ -909,4 +920,4 @@ observer.observe(card);
 </script>
 
 </body>
-</html>
+    </html>
