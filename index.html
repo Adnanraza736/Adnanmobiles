@@ -1,231 +1,851 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adnan Mobiles - Computer Repairing Center</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="ADNAN MOBILES & Computer Repairing Center">
-    <meta property="og:description" content="Professional mobile & computer solutions, software services, graphic designing and digital work — Near UBL, Basharat.">
-    <meta property="og:type" content="website">
+<title>Adnan Mobiles & Computer Repairing Center</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            background-color: #080808;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            padding: 25px 15px;
-            overflow-x: hidden;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        /* --- Keyframe Animations --- */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-25px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+body{
+    background:#050505;
+    color:#eeeeee;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(35px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* GOLD GLOW BACKGROUND */
 
-        @keyframes floatGlowCard {
-            0% {
-                transform: translateY(0px);
-                box-shadow: 0 0 25px rgba(255, 204, 0, 0.25);
-                border-color: rgba(255, 204, 0, 0.5);
-            }
-            50% {
-                transform: translateY(-10px);
-                box-shadow: 0 0 55px rgba(255, 204, 0, 0.6);
-                border-color: rgba(255, 204, 0, 1);
-            }
-            100% {
-                transform: translateY(0px);
-                box-shadow: 0 0 25px rgba(255, 204, 0, 0.25);
-                border-color: rgba(255, 204, 0, 0.5);
-            }
-        }
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    left:-200px;
+    top:100px;
+    border-radius:50%;
+    background:rgba(255,210,28,.08);
+    filter:blur(80px);
+    animation:glowMove 8s infinite alternate ease-in-out;
+    pointer-events:none;
+    z-index:-1;
+}
 
-        @keyframes pulseBorder {
-            0%, 100% { border-color: #7a6212; box-shadow: 0 0 8px rgba(255, 204, 0, 0.2); }
-            50% { border-color: #ffcc00; box-shadow: 0 0 20px rgba(255, 204, 0, 0.6); }
-        }
+body::after{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    right:-180px;
+    bottom:50px;
+    border-radius:50%;
+    background:rgba(255,210,28,.06);
+    filter:blur(80px);
+    animation:glowMove2 10s infinite alternate ease-in-out;
+    pointer-events:none;
+    z-index:-1;
+}
 
-        /* Top Header */
-        .top-header {
-            text-align: center;
-            margin-top: 5px;
-            margin-bottom: 20px;
-            animation: fadeInDown 0.8s ease-out forwards;
-        }
-        .top-header h2 {
-            color: #ffcc00;
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-        }
-        .top-header p {
-            color: #aaaaaa;
-            font-size: 11px;
-            letter-spacing: 1px;
-            margin-top: 3px;
-        }
+/* NAVBAR */
 
-        /* Services Pill Border */
-        .services-pill {
-            border: 1px solid #7a6212;
-            border-radius: 25px;
-            padding: 10px 22px;
-            font-size: 11px;
-            color: #e6c229;
-            letter-spacing: 1.5px;
-            text-align: center;
-            margin-bottom: 25px;
-            background-color: rgba(255, 204, 0, 0.03);
-            font-weight: 600;
-            animation: fadeInDown 1s ease-out forwards, pulseBorder 3s infinite ease-in-out;
-        }
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(5,5,5,.88);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #242424;
+}
 
-        /* Main Hero Card (Lamba Card Design) */
-        .hero-card {
-            border: 2px solid #ffcc00;
-            border-radius: 35px; /* Circle ki jagah lamba sleek shape */
-            padding: 40px 22px;
-            text-align: center;
-            width: 100%;
-            max-width: 360px;
-            margin-bottom: 25px;
-            background: radial-gradient(circle, rgba(255, 204, 0, 0.08) 0%, rgba(0,0,0,0.8) 100%);
-            animation: floatGlowCard 3.5s ease-in-out infinite, fadeInUp 1.2s ease-out forwards;
-        }
+.nav{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:17px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        .hero-card h1 {
-            font-size: 30px;
-            font-weight: 900;
-            line-height: 1.2;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            color: #ffffff;
-        }
+.logo{
+    color:#ffd21c;
+    font-size:21px;
+    font-weight:bold;
+    letter-spacing:1px;
+    position:relative;
+    overflow:hidden;
+}
 
-        .hero-card h1 .yellow {
-            color: #ffcc00;
-            display: block;
-            text-shadow: 0 0 18px rgba(255, 204, 0, 0.6);
-        }
+.logo::after{
+    content:"";
+    position:absolute;
+    width:60px;
+    height:100%;
+    left:-80px;
+    top:0;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+    transform:skewX(-20deg);
+    animation:logoShine 4s infinite;
+}
 
-        .hero-card h3 {
-            font-size: 18px;
-            font-weight: 500;
-            color: #ffffff;
-            margin-bottom: 18px;
-        }
+.nav a{
+    color:#999;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+    transition:.3s;
+}
 
-        .hero-card p {
-            color: #cccccc;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 22px;
-        }
+.nav a:hover{
+    color:#ffd21c;
+}
 
-        .location {
-            font-size: 15px;
-            color: #ffffff;
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px 15px;
-            border-radius: 20px;
-            display: inline-block;
-        }
+/* HERO */
 
-        /* Action Buttons Container */
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-            max-width: 360px;
-            animation: fadeInUp 1.4s ease-out forwards;
-        }
+.hero{
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+    padding:70px 0;
+}
 
-        .btn {
-            flex: 1;
-            padding: 15px;
-            border-radius: 14px;
-            font-weight: bold;
-            font-size: 15px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.25s ease;
-        }
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+}
 
-        .btn:active, .btn:hover {
-            transform: translateY(-2px) scale(1.02);
-        }
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border:1px solid #806b18;
+    border-radius:30px;
+    color:#ffd21c;
+    font-size:12px;
+    letter-spacing:1.5px;
+    animation:fadeDown 1s ease;
+}
 
-        .btn-call {
-            background-color: #ffcc00;
-            color: #000000;
-            border: none;
-            box-shadow: 0 5px 20px rgba(255, 204, 0, 0.4);
-        }
+.hero h1{
+    font-size:clamp(42px,7vw,76px);
+    line-height:1.03;
+    margin:22px 0;
+    animation:fadeUp 1s ease;
+}
 
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: #ffffff;
-            border: none;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-        }
-    </style>
+.gold{
+    color:#ffd21c;
+    text-shadow:
+        0 0 15px rgba(255,210,28,.25),
+        0 0 40px rgba(255,210,28,.08);
+}
+
+.hero p{
+    color:#999;
+    max-width:720px;
+    font-size:18px;
+    line-height:1.8;
+    animation:fadeUp 1.2s ease;
+}
+
+.buttons{
+    margin-top:28px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    animation:fadeUp 1.4s ease;
+}
+
+.btn{
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    padding:13px 21px;
+    border-radius:10px;
+    border:1px solid #ffd21c;
+    color:#ffd21c;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn.primary{
+    background:#ffd21c;
+    color:#050505;
+    animation:buttonPulse 2.5s infinite;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 35px rgba(255,210,28,.15);
+}
+
+.btn::after{
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-120%;
+    width:60%;
+    height:200%;
+    background:rgba(255,255,255,.3);
+    transform:skewX(-20deg);
+    animation:buttonShine 5s infinite;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:40px;
+}
+
+.title p{
+    color:#777;
+    margin-top:8px;
+}
+
+/* SERVICE CARDS */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    position:relative;
+    background:linear-gradient(145deg,#121212,#080808);
+    border:1px solid #262626;
+    border-radius:18px;
+    padding:28px 22px;
+    overflow:hidden;
+
+    opacity:0;
+    transform:translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        border-color .3s,
+        box-shadow .3s;
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,210,28,.55);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.5),
+        0 0 30px rgba(255,210,28,.06);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:3px;
+    height:100%;
+    background:#ffd21c;
+    transform:scaleY(0);
+    transform-origin:bottom;
+    transition:.35s;
+}
+
+.card:hover::before{
+    transform:scaleY(1);
+}
+
+.icon{
+    font-size:34px;
+    margin-bottom:13px;
+}
+
+.card h3{
+    color:#ffd21c;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#999;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* ABOUT */
+
+.about{
+    background:linear-gradient(145deg,#111,#080808);
+    border:1px solid #292929;
+    border-radius:25px;
+    padding:45px;
+    text-align:center;
+
+    opacity:0;
+    transform:translateY(30px);
+    transition:.9s;
+}
+
+.about.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.about p{
+    max-width:780px;
+    margin:15px auto;
+    color:#999;
+    line-height:1.9;
+}
+
+.hours{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 25px;
+    border:1px solid rgba(255,210,28,.3);
+    border-radius:15px;
+    color:#aaa;
+}
+
+.hours b{
+    display:block;
+    color:#ffd21c;
+    font-size:21px;
+    margin-top:4px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    padding:50px 30px;
+    border:1px solid rgba(255,210,28,.25);
+    border-radius:25px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,210,28,.07),
+            transparent 60%
+        );
+}
+
+.contact h2{
+    font-size:40px;
+}
+
+.contact p{
+    color:#999;
+    margin:9px 0;
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:57px;
+    height:57px;
+    border-radius:50%;
+    background:#ffd21c;
+    color:#050505;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:23px;
+    z-index:200;
+    animation:buttonPulse 2.5s infinite;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    border-top:1px solid #191919;
+    padding:28px;
+    color:#666;
+    font-size:13px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes logoShine{
+
+    0%,60%{
+        left:-80px;
+    }
+
+    80%,100%{
+        left:150%;
+    }
+
+}
+
+@keyframes buttonShine{
+
+    0%,65%{
+        left:-120%;
+    }
+
+    85%,100%{
+        left:150%;
+    }
+
+}
+
+@keyframes buttonPulse{
+
+    0%,100%{
+        box-shadow:0 0 0 0 rgba(255,210,28,0);
+    }
+
+    50%{
+        box-shadow:0 0 0 10px rgba(255,210,28,.06);
+    }
+
+}
+
+@keyframes glowMove{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(220px,100px);
+    }
+
+}
+
+@keyframes glowMove2{
+
+    from{
+        transform:translate(0,0);
+    }
+
+    to{
+        transform:translate(-180px,-100px);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .nav a{
+        margin:0 7px;
+        font-size:12px;
+    }
+
+    .services{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:520px){
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:44px;
+    }
+
+    section{
+        padding:65px 0;
+    }
+
+}
+
+/* REDUCE MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+        animation:none!important;
+        transition:none!important;
+    }
+
+    .card,
+    .about{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="top-header">
-        <h2>ADNAN MOBILES</h2>
-        <p>COMPUTER REPAIRING CENTER</p>
-    </div>
+<nav>
 
-    <div class="services-pill">
-        MOBILE • COMPUTER • DIGITAL SERVICES
-    </div>
+<div class="nav">
 
-    <div class="hero-card">
-        <h1>ADNAN <span class="yellow">MOBILES</span></h1>
-        <h3>and Computer Repairing Center</h3>
-        <p>Professional mobile & computer solutions, software services, graphic designing and digital work — all under one roof.</p>
-        <div class="location">
-            📍 Near UBL, Basharat
-        </div>
-    </div>
+<div class="logo">
+ADNAN MOBILES
+</div>
 
-    <div class="btn-container">
-        <a href="tel:+923474259475" class="btn btn-call">
-            <i class="fas fa-phone"></i> Call: 0347-4259475
-        </a>
+<div>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
 
-        <a href="https://wa.me/923431556149" class="btn btn-whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp: 0343-1556149
-        </a>
-    </div>
+</div>
+
+</nav>
+
+
+<header class="hero" id="home">
+
+<div class="container">
+
+<div class="badge">
+MOBILE • COMPUTER • DIGITAL SERVICES
+</div>
+
+<h1>
+Adnan <span class="gold">Mobiles</span>
+<br>
+& Computer Repairing Center
+</h1>
+
+<p>
+Mobile repairing, computer repairing, mobile software,
+Windows installation, photo making, graphic designing,
+online registration and digital services — all in one place.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="#services">
+Explore Services
+</a>
+
+<a class="btn"
+href="https://maps.app.goo.gl/efB3Wv1pmyp1tAyf6"
+target="_blank">
+📍 Get Directions
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<section id="services">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+Our <span class="gold">Services</span>
+</h2>
+
+<p>
+Quality work with professional care.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Mobile Repairing</h3>
+<p>
+Mobile phone hardware and repairing services.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">⚙️</div>
+<h3>Mobile Software</h3>
+<p>
+Mobile software, setup and related services.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Computer Repairing</h3>
+<p>
+Computer troubleshooting, repair and setup.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🪟</div>
+<h3>Windows Installation</h3>
+<p>
+Windows installation and computer setup.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>Photo & Graphic Designing</h3>
+<p>
+Photo making, editing and graphic designing.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Online Services</h3>
+<p>
+Online registration, downloading and digital assistance.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">💾</div>
+<h3>USB & Memory Card</h3>
+<p>
+USB and memory card data transfer services.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🖨️</div>
+<h3>Printing & CV</h3>
+<p>
+Photo printing, CV creation and document services.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">📲</div>
+<h3>Mobile Sales</h3>
+<p>
+New and second-hand mobile phones.
+</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="about">
+
+<div class="container">
+
+<div class="about">
+
+<div class="title">
+
+<h2>
+About <span class="gold">Adnan Mobiles</span>
+</h2>
+
+</div>
+
+<p>
+Adnan Mobiles and Computer Repairing Center provides
+mobile, computer and digital services with a focus on
+helpful service and quality work.
+</p>
+
+<div class="hours">
+
+🕐 Opening Hours
+
+<b>
+10:00 AM — 8:00 PM
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact">
+
+<h2>
+Let's <span class="gold">Connect</span>
+</h2>
+
+<p>
+📍 Near UBL Basharat
+</p>
+
+<p>
+📞 0347-4259475 &nbsp; | &nbsp; 0343-1556149
+</p>
+
+<p>
+✉ adnanraza736@gmail.com
+</p>
+
+
+<div class="buttons"
+style="justify-content:center">
+
+<a class="btn primary"
+href="tel:03474259475">
+📞 Call Now
+</a>
+
+<a class="btn"
+href="https://wa.me/923474259475"
+target="_blank">
+💬 WhatsApp
+</a>
+
+<a class="btn"
+href="https://maps.app.goo.gl/efB3Wv1pmyp1tAyf6"
+target="_blank">
+📍 Maps
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Adnan Mobiles and Computer Repairing Center
+• Near UBL Basharat
+
+</footer>
+
+
+<a class="whatsapp"
+href="https://wa.me/923474259475"
+target="_blank">
+💬
+</a>
+
+
+<script>
+
+const cards =
+document.querySelectorAll(".card,.about");
+
+const observer =
+new IntersectionObserver(
+
+entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+threshold:0.12
+}
+
+);
+
+cards.forEach(card => {
+
+observer.observe(card);
+
+});
+
+</script>
 
 </body>
-    </html>
-    
+</html>
