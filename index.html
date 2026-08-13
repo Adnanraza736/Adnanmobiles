@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Adnan Mobiles & Computer Repairing Center</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 *{
     margin:0;
@@ -25,7 +31,10 @@ body{
     overflow-x:hidden;
 }
 
-/* GOLD GLOW BACKGROUND */
+
+/* =========================
+   GOLD GLOW BACKGROUND
+========================= */
 
 body::before{
     content:"";
@@ -57,7 +66,10 @@ body::after{
     z-index:-1;
 }
 
-/* NAVBAR */
+
+/* =========================
+   NAVBAR
+========================= */
 
 nav{
     position:sticky;
@@ -116,7 +128,10 @@ nav{
     color:#ffd21c;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:85vh;
@@ -127,40 +142,108 @@ nav{
     overflow:hidden;
 }
 
-/* ROTATING GOLD CIRCLE */
+
+/* =========================
+   ROTATING GOLD CIRCLE
+========================= */
 
 .hero::before{
     content:"";
     position:absolute;
+
     width:380px;
     height:380px;
+
     right:4%;
     top:50%;
+
     transform:translateY(-50%);
+
     border:1px solid rgba(255,210,28,.35);
     border-radius:50%;
-    box-shadow:0 0 35px rgba(255,210,28,.08);
-    animation:circleRotate 14s linear infinite;
+
+    box-shadow:
+        0 0 35px rgba(255,210,28,.08);
+
+    animation:
+        circleRotate 14s linear infinite;
+
     pointer-events:none;
 }
 
-/* ROTATING GOLD DOT */
+
+/* =========================
+   ORBITING GOLD DOT
+========================= */
 
 .hero::after{
     content:"";
     position:absolute;
+
     width:12px;
     height:12px;
+
     background:#ffd21c;
+
     border-radius:50%;
+
     right:calc(4% + 184px);
     top:calc(50% - 190px);
+
     box-shadow:
         0 0 12px #ffd21c,
         0 0 30px rgba(255,210,28,.8);
-    animation:dotOrbit 5s linear infinite;
+
+    animation:
+        dotOrbit 5s linear infinite;
+
     pointer-events:none;
 }
+
+
+/* Circle rotation */
+
+@keyframes circleRotate{
+
+    from{
+        transform:
+            translateY(-50%)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            translateY(-50%)
+            rotate(360deg);
+    }
+
+}
+
+
+/* Dot orbit */
+
+@keyframes dotOrbit{
+
+    from{
+        transform:
+            rotate(0deg)
+            translateX(190px)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            rotate(360deg)
+            translateX(190px)
+            rotate(-360deg);
+    }
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
     width:92%;
@@ -170,26 +253,42 @@ nav{
     z-index:2;
 }
 
+
+/* =========================
+   BADGE
+========================= */
+
 .badge{
     display:inline-block;
     padding:8px 15px;
+
     border:1px solid #806b18;
     border-radius:30px;
+
     color:#ffd21c;
+
     font-size:12px;
     letter-spacing:1.5px;
+
     animation:fadeDown 1s ease;
 }
+
+
+/* =========================
+   HERO TEXT
+========================= */
 
 .hero h1{
     font-size:clamp(42px,7vw,76px);
     line-height:1.03;
     margin:22px 0;
+
     animation:fadeUp 1s ease;
 }
 
 .gold{
     color:#ffd21c;
+
     text-shadow:
         0 0 15px rgba(255,210,28,.25),
         0 0 40px rgba(255,210,28,.08);
@@ -198,56 +297,86 @@ nav{
 .hero p{
     color:#999;
     max-width:720px;
+
     font-size:18px;
     line-height:1.8;
+
     animation:fadeUp 1.2s ease;
 }
 
+
+/* =========================
+   BUTTONS
+========================= */
+
 .buttons{
     margin-top:28px;
+
     display:flex;
     gap:12px;
+
     flex-wrap:wrap;
+
     animation:fadeUp 1.4s ease;
 }
 
 .btn{
     position:relative;
     overflow:hidden;
+
     display:inline-block;
+
     padding:13px 21px;
+
     border-radius:10px;
+
     border:1px solid #ffd21c;
+
     color:#ffd21c;
+
     text-decoration:none;
+
     font-weight:bold;
+
     transition:.3s;
 }
 
 .btn.primary{
     background:#ffd21c;
     color:#050505;
+
     animation:buttonPulse 2.5s infinite;
 }
 
 .btn:hover{
     transform:translateY(-5px);
-    box-shadow:0 12px 35px rgba(255,210,28,.15);
+
+    box-shadow:
+        0 12px 35px rgba(255,210,28,.15);
 }
 
 .btn::after{
     content:"";
+
     position:absolute;
+
     top:-50%;
     left:-120%;
+
     width:60%;
     height:200%;
+
     background:rgba(255,255,255,.3);
+
     transform:skewX(-20deg);
+
     animation:buttonShine 5s infinite;
 }
 
-/* SECTIONS */
+
+/* =========================
+   SECTIONS
+========================= */
 
 section{
     padding:90px 0;
@@ -267,23 +396,42 @@ section{
     margin-top:8px;
 }
 
-/* SERVICE CARDS */
+
+/* =========================
+   SERVICE CARDS
+========================= */
 
 .services{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:18px;
 }
 
 .card{
     position:relative;
-    background:linear-gradient(145deg,#121212,#080808);
+
+    background:
+        linear-gradient(
+            145deg,
+            #121212,
+            #080808
+        );
+
     border:1px solid #262626;
+
     border-radius:18px;
+
     padding:28px 22px;
+
     overflow:hidden;
+
     opacity:0;
+
     transform:translateY(35px);
+
     transition:
         opacity .8s ease,
         transform .8s ease,
@@ -298,7 +446,10 @@ section{
 
 .card:hover{
     transform:translateY(-8px);
-    border-color:rgba(255,210,28,.55);
+
+    border-color:
+        rgba(255,210,28,.55);
+
     box-shadow:
         0 20px 50px rgba(0,0,0,.5),
         0 0 30px rgba(255,210,28,.06);
@@ -306,14 +457,21 @@ section{
 
 .card::before{
     content:"";
+
     position:absolute;
+
     left:0;
     top:0;
+
     width:3px;
     height:100%;
+
     background:#ffd21c;
+
     transform:scaleY(0);
+
     transform-origin:bottom;
+
     transition:.35s;
 }
 
@@ -333,20 +491,37 @@ section{
 
 .card p{
     color:#999;
+
     font-size:14px;
+
     line-height:1.7;
 }
 
-/* ABOUT */
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
-    background:linear-gradient(145deg,#111,#080808);
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #080808
+        );
+
     border:1px solid #292929;
+
     border-radius:25px;
+
     padding:45px;
+
     text-align:center;
+
     opacity:0;
+
     transform:translateY(30px);
+
     transition:.9s;
 }
 
@@ -357,34 +532,56 @@ section{
 
 .about p{
     max-width:780px;
+
     margin:15px auto;
+
     color:#999;
+
     line-height:1.9;
 }
 
 .hours{
     display:inline-block;
+
     margin-top:20px;
+
     padding:15px 25px;
-    border:1px solid rgba(255,210,28,.3);
+
+    border:
+        1px solid
+        rgba(255,210,28,.3);
+
     border-radius:15px;
+
     color:#aaa;
 }
 
 .hours b{
     display:block;
+
     color:#ffd21c;
+
     font-size:21px;
+
     margin-top:4px;
 }
 
-/* CONTACT */
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
     text-align:center;
+
     padding:50px 30px;
-    border:1px solid rgba(255,210,28,.25);
+
+    border:
+        1px solid
+        rgba(255,210,28,.25);
+
     border-radius:25px;
+
     background:
         radial-gradient(
             circle at center,
@@ -402,128 +599,159 @@ section{
     margin:9px 0;
 }
 
-/* FLOATING WHATSAPP */
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
 
 .whatsapp{
     position:fixed;
+
     right:18px;
     bottom:18px;
+
     width:57px;
     height:57px;
+
     border-radius:50%;
+
     background:#ffd21c;
+
     color:#050505;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     text-decoration:none;
+
     font-size:23px;
+
     z-index:200;
-    animation:buttonPulse 2.5s infinite;
+
+    animation:
+        buttonPulse 2.5s infinite;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     text-align:center;
+
     border-top:1px solid #191919;
+
     padding:28px;
+
     color:#666;
+
     font-size:13px;
 }
 
-/* ANIMATIONS */
+
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes fadeUp{
+
     from{
         opacity:0;
         transform:translateY(30px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 @keyframes fadeDown{
+
     from{
         opacity:0;
         transform:translateY(-20px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 @keyframes logoShine{
+
     0%,60%{
         left:-80px;
     }
+
     80%,100%{
         left:150%;
     }
+
 }
 
 @keyframes buttonShine{
+
     0%,65%{
         left:-120%;
     }
+
     85%,100%{
         left:150%;
     }
+
 }
 
 @keyframes buttonPulse{
+
     0%,100%{
-        box-shadow:0 0 0 0 rgba(255,210,28,0);
+        box-shadow:
+            0 0 0 0
+            rgba(255,210,28,0);
     }
+
     50%{
-        box-shadow:0 0 0 10px rgba(255,210,28,.06);
+        box-shadow:
+            0 0 0 10px
+            rgba(255,210,28,.06);
     }
+
 }
 
 @keyframes glowMove{
+
     from{
         transform:translate(0,0);
     }
+
     to{
         transform:translate(220px,100px);
     }
+
 }
 
 @keyframes glowMove2{
+
     from{
         transform:translate(0,0);
     }
+
     to{
         transform:translate(-180px,-100px);
     }
+
 }
 
-/* CIRCLE ROTATION */
 
-@keyframes circleRotate{
-    from{
-        transform:translateY(-50%) rotate(0deg);
-    }
-    to{
-        transform:translateY(-50%) rotate(360deg);
-    }
-}
-
-/* DOT ORBIT */
-
-@keyframes dotOrbit{
-    from{
-        transform:rotate(0deg) translateX(190px) rotate(0deg);
-    }
-    to{
-        transform:rotate(360deg) translateX(190px) rotate(-360deg);
-    }
-}
-
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:800px){
 
@@ -543,21 +771,35 @@ footer{
 
 }
 
+
+/* =========================
+   MOBILE CIRCLE
+========================= */
+
 @media(max-width:700px){
 
     .hero::before{
+
         width:280px;
         height:280px;
+
         right:-100px;
         top:70%;
     }
 
     .hero::after{
+
         right:35px;
+
         top:calc(70% - 145px);
     }
 
 }
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media(max-width:520px){
 
@@ -573,9 +815,16 @@ footer{
         padding:65px 0;
     }
 
+    .about{
+        padding:30px 20px;
+    }
+
 }
 
-/* REDUCE MOTION */
+
+/* =========================
+   REDUCE MOTION
+========================= */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -596,9 +845,13 @@ footer{
 
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
@@ -609,10 +862,15 @@ ADNAN MOBILES
 </div>
 
 <div>
+
 <a href="#home">Home</a>
+
 <a href="#services">Services</a>
+
 <a href="#about">About</a>
+
 <a href="#contact">Contact</a>
+
 </div>
 
 </div>
@@ -620,7 +878,10 @@ ADNAN MOBILES
 </nav>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero" id="home">
 
@@ -630,29 +891,49 @@ ADNAN MOBILES
 MOBILE • COMPUTER • DIGITAL SERVICES
 </div>
 
+
 <h1>
-Adnan <span class="gold">Mobiles</span>
+
+Adnan
+<span class="gold">Mobiles</span>
+
 <br>
+
 & Computer Repairing Center
+
 </h1>
 
+
 <p>
+
 Mobile repairing, computer repairing, mobile software,
 Windows installation, photo making, graphic designing,
 online registration and digital services — all in one place.
+
 </p>
+
 
 <div class="buttons">
 
-<a class="btn primary" href="#services">
+
+<a
+class="btn primary"
+href="#services">
+
 Explore Services
+
 </a>
 
-<a class="btn"
+
+<a
+class="btn"
 href="https://maps.app.goo.gl/efB3Wv1pmyp1tAyf6"
 target="_blank">
+
 📍 Get Directions
+
 </a>
+
 
 </div>
 
@@ -661,16 +942,23 @@ target="_blank">
 </header>
 
 
-<!-- SERVICES -->
+
+<!-- =========================
+     SERVICES
+========================= -->
 
 <section id="services">
 
 <div class="container">
 
+
 <div class="title">
 
 <h2>
-Our <span class="gold">Services</span>
+
+Our
+<span class="gold">Services</span>
+
 </h2>
 
 <p>
@@ -679,87 +967,151 @@ Quality work with professional care.
 
 </div>
 
+
+
 <div class="services">
 
 
 <div class="card">
+
 <div class="icon">📱</div>
-<h3>Mobile Repairing</h3>
+
+<h3>
+Mobile Repairing
+</h3>
+
 <p>
 Mobile phone hardware and repairing services.
 </p>
+
 </div>
 
 
+
 <div class="card">
+
 <div class="icon">⚙️</div>
-<h3>Mobile Software</h3>
+
+<h3>
+Mobile Software
+</h3>
+
 <p>
 Mobile software, setup and related services.
 </p>
+
 </div>
 
 
+
 <div class="card">
+
 <div class="icon">💻</div>
-<h3>Computer Repairing</h3>
+
+<h3>
+Computer Repairing
+</h3>
+
 <p>
 Computer troubleshooting, repair and setup.
 </p>
+
 </div>
 
 
+
 <div class="card">
+
 <div class="icon">🪟</div>
-<h3>Windows Installation</h3>
+
+<h3>
+Windows Installation
+</h3>
+
 <p>
 Windows installation and computer setup.
 </p>
+
 </div>
 
 
+
 <div class="card">
+
 <div class="icon">🎨</div>
-<h3>Photo & Graphic Designing</h3>
+
+<h3>
+Photo & Graphic Designing
+</h3>
+
 <p>
 Photo making, editing and graphic designing.
 </p>
+
 </div>
 
 
+
 <div class="card">
+
 <div class="icon">🌐</div>
-<h3>Online Services</h3>
+
+<h3>
+Online Services
+</h3>
+
 <p>
 Online registration, downloading and digital assistance.
 </p>
+
 </div>
 
 
+
 <div class="card">
+
 <div class="icon">💾</div>
-<h3>USB & Memory Card</h3>
+
+<h3>
+USB & Memory Card
+</h3>
+
 <p>
 USB and memory card data transfer services.
 </p>
+
 </div>
 
 
+
 <div class="card">
+
 <div class="icon">🖨️</div>
-<h3>Printing & CV</h3>
+
+<h3>
+Printing & CV
+</h3>
+
 <p>
 Photo printing, CV creation and document services.
 </p>
+
 </div>
 
 
+
 <div class="card">
+
 <div class="icon">📲</div>
-<h3>Mobile Sales</h3>
+
+<h3>
+Mobile Sales
+</h3>
+
 <p>
 New and second-hand mobile phones.
 </p>
+
 </div>
 
 
@@ -770,27 +1122,41 @@ New and second-hand mobile phones.
 </section>
 
 
-<!-- ABOUT -->
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
 
 <div class="container">
 
+
 <div class="about">
+
 
 <div class="title">
 
 <h2>
-About <span class="gold">Adnan Mobiles</span>
+
+About
+<span class="gold">
+Adnan Mobiles
+</span>
+
 </h2>
 
 </div>
 
+
 <p>
+
 Adnan Mobiles and Computer Repairing Center provides
 mobile, computer and digital services with a focus on
 helpful service and quality work.
+
 </p>
+
 
 <div class="hours">
 
@@ -802,6 +1168,7 @@ helpful service and quality work.
 
 </div>
 
+
 </div>
 
 </div>
@@ -809,51 +1176,82 @@ helpful service and quality work.
 </section>
 
 
-<!-- CONTACT -->
+
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact">
 
 <div class="container">
 
+
 <div class="contact">
 
+
 <h2>
-Let's <span class="gold">Connect</span>
+
+Let's
+<span class="gold">
+Connect
+</span>
+
 </h2>
+
 
 <p>
 📍 Near UBL Basharat
 </p>
 
+
 <p>
 📞 0347-4259475 &nbsp; | &nbsp; 0343-1556149
 </p>
+
 
 <p>
 ✉ adnanraza736@gmail.com
 </p>
 
-<div class="buttons"
-style="justify-content:center">
 
-<a class="btn primary"
+
+<div
+class="buttons"
+style="justify-content:center"
+>
+
+
+<a
+class="btn primary"
 href="tel:03474259475">
+
 📞 Call Now
+
 </a>
 
-<a class="btn"
+
+<a
+class="btn"
 href="https://wa.me/923474259475"
 target="_blank">
+
 💬 WhatsApp
+
 </a>
 
-<a class="btn"
+
+<a
+class="btn"
 href="https://maps.app.goo.gl/efB3Wv1pmyp1tAyf6"
 target="_blank">
+
 📍 Maps
+
 </a>
 
+
 </div>
+
 
 </div>
 
@@ -862,7 +1260,10 @@ target="_blank">
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -872,21 +1273,31 @@ target="_blank">
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
 
-<a class="whatsapp"
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+class="whatsapp"
 href="https://wa.me/923474259475"
 target="_blank">
+
 💬
+
 </a>
 
 
-<!-- SCROLL ANIMATION -->
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
 const cards =
 document.querySelectorAll(".card,.about");
+
 
 const observer =
 new IntersectionObserver(
@@ -911,6 +1322,7 @@ threshold:0.12
 
 );
 
+
 cards.forEach(card => {
 
 observer.observe(card);
@@ -919,5 +1331,7 @@ observer.observe(card);
 
 </script>
 
+
 </body>
+
     </html>
